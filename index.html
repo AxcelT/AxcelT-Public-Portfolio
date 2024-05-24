@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <!--Links-->
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inconsolata&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M488 256h-56.4c6.9-15.4 10.4-32 10.4-48 0-13.1-2.5-25.7-7.3-37.6l52.3-30.2c7.7-4.4 10.4-14.2 6-21.9-4.4-7.7-14.2-10.4-21.9-6l-51.9 29.9C409.9 97.3 376.5 80 340 80c-17.7 0-34.3 3.7-49.8 10.2L256 32h-32l-34.2 58.2c-15.5-6.5-32.1-10.2-49.8-10.2-36.5 0-69.9 17.3-90.7 44.2L48.4 94.3c-7.7-4.4-17.5-1.7-21.9 6s-1.7 17.5 6 21.9l52.3 30.2c-4.8 11.9-7.3 24.5-7.3 37.6 0 16 3.6 32.6 10.4 48H24c-8.8 0-16 7.2-16 16s7.2 16 16 16h56.4c-6.9 15.4-10.4 32-10.4 48 0 13.1 2.5 25.7 7.3 37.6l-52.3 30.2c-7.7 4.4-10.4 14.2-6 21.9 4.4 7.7 14.2 10.4 21.9 6l51.9-29.9c20.8 26.9 54.2 44.2 90.7 44.2 17.7 0 34.3-3.7 49.8-10.2L256 480h32l34.2-58.2c15.5 6.5 32.1 10.2 49.8 10.2 36.5 0 69.9-17.3 90.7-44.2l51.9 29.9c7.7 4.4 17.5 1.7 21.9-6 4.4-7.7 1.7-17.5-6-21.9l-52.3-30.2c4.8-11.9 7.3-24.5 7.3-37.6 0-16-3.6-32.6-10.4-48H488c8.8 0 16-7.2 16-16s-7.2-16-16-16zm-232 64h-64c-8.8 0-16-7.2-16-16s7.2-16 16-16h64c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0-96h-64c-8.8 0-16-7.2-16-16s7.2-16 16-16h64c8.8 0 16 7.2 16 16s-7.2 16-16 16z'/></svg>" type="image/svg+xml">
+    </head>
+<body>
+    <div id="loading-screen">
+        <p>booting axcel-portfolio-terminal.exe<span id="dots"></span></p>
+    </div>
+    <div class="outer-container" style="display:none;">
+        <div class="outer-border">
+            <div class="window-controls">
+                <span class="window-title">
+                    <i class="fas fa-bug"></i> axcel-portfolio-terminal.exe
+                </span>
+                <div class="window-buttons">
+                    <button class="window-button close-button">&times;</button>
+                    <button class="window-button resize-button">&#9744;</button>
+                    <button class="window-button minimize-button">&#8211;</button>
+                </div>
+            </div>
+            <div class="content">
+                <!-- 1st Column Div -->
+                <div class="navbar">
+                    <header>
+                        <h1>{Axcel Tidalgo}</h1>
+                        <p class="subtitle">Engineer.<wbr>Developer.<wbr><span class="highlight-blue">Student.</span></p>
+                    </header>
+                    <nav>
+                        <button data-section="about" onclick="showSection('about')">&gt; run About</button>
+                        <button data-section="portfolio" onclick="showSection('portfolio')">&gt; run Portfolio</button>
+                        <button data-section="projects" onclick="showSection('projects')">&gt; run Projects</button>
+                        <button data-section="contact" onclick="showSection('contact')">&gt; run Contact Details</button>
+                    </nav>
+                </div>
+                <!-- 2nd Column Div -->
+                <div class="main-content">
+                    <!-- About Me Section-->
+                    <section id="about">
+                        <h2 class="terminal-title">&gt;&gt;  About Me</h2>
+                        <p>A final-year Computer Engineering student at De La Salle University, proficient in various programming and scripting languages, with introductory experience in neural networks using machine learning frameworks. Skilled in managing documentation and ensuring compliance. Eager to engage in continuous learning and enhance technical proficiency. Actively seeking opportunities to deepen practical knowledge and apply academic learning in real-world environments.</p>
+                    </section>
+                    <!-- Portfolio Section-->
+                    <section id="portfolio" style="display:none;">
+                        <h2 class="terminal-title">&gt;&gt;  My Portfolio</h2>
+                        <p><span class="highlight">Portfolio:</span> <a href="path/to/your-portfolio.pdf" download="Axcel_Tidalgo_Portfolio.pdf">Download Portfolio</a></p>
+                        
+                        <h3 class="terminal-subtitle ">&gt; Education</h3>
+                        <p><span class="highlight-orange">Education:</span> De La Salle University (expected 2025)</p>
+                        <p><span class="highlight-orange">Degree:</span> BS Computer Engineering</p>
+                        
+                        <h3 class="terminal-subtitle">&gt; Work Experience</h3>
+                        <p><span class="highlight-orange">Company:</span> JACSS Dynamic Business Outsourcing Solutions INC.</p>
+                        <p><span class="highlight-orange">Duration:</span> May 2024 - August 2024</p>
+                        <p><span class="highlight-orange">Role:</span> IT Intern</p>
+                        <p><span class="highlight-orange">Responsibilities:</span></p>
+                        <ul class="responsibilities-list">
+                            <li>Assisted in network troubleshooting and maintenance.</li>
+                            <li>Provided technical support to staff and clients.</li>
+                            <li>Collaborated with the IT team to implement new software solutions.</li>
+                            <li>Documented IT processes and created user guides.</li>
+                        </ul>
+                        
+                        <h3 class="terminal-subtitle">&gt; Certifications</h3>
+                        <p><span class="highlight-orange">CodeCademy:</span> Learn Python3, HTML, CSS</p>
+                        <p><span class="highlight-orange">Udemy:</span> Web Development</p>
+                    </section>
+                    <!-- Projects Section -->
+                    <section id="projects" style="display:none;">
+                        <h2 class="terminal-title">&gt;&gt;  My Projects</h2>
+                        <!-- For Future Axcel: Add Your Project Here -->
+                        <h2 class="terminal-title">&gt;&gt;  My Assesment Tests</h2>
+                    </section>
+
+                    <!-- Contact Details Sections-->
+                    <section id="contact" style="display:none;">
+                        <h2 class="terminal-title">&gt;&gt;  My Contacts</h2>
+                        <p>Contact No: <a href="tel:+639065731682">(+63) 906 573 1682</a></p>
+                        <p>Email: <a href="mailto:tidalgo.ajd@gmail.com">tidalgo.ajd@gmail.com</a></p>
+                        <p>
+                            <a href="https://www.linkedin.com/in/axcel-justin-tidalgo-1a3940217/" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://github.com/your-profile" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rotate-overlay">
+        <img src="https://www.klfy.com/wp-content/uploads/sites/9/2019/11/You.jpg"/>
+        <p>Rotate!</p>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
