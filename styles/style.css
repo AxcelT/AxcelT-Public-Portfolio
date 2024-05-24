@@ -28,16 +28,41 @@ i{
     margin-left:0.5rem;
 }
 
-pre, code {
-    font-family: 'Inconsolata', 'Fira Mono', monospace;
+.terminal-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
     background-color: #1E1E2F;
     color: #C5C8C6;
+    font-family: 'Inconsolata', 'Fira Mono', monospace;
+}
+
+/* Terminal Styles */
+.terminal-row {
+    display: table-row;
+}
+
+.terminal-cell {
+    display: table-cell;
     padding: 10px;
     border: 1px solid #F0C674;
-    border-radius: 5px;
-    overflow: auto;
-    white-space: pre;
 }
+
+.terminal-header .terminal-cell {
+    background-color: #3B3B58;
+    font-weight: bold;
+}
+
+.terminal-cell a {
+    color: #888de2;
+    text-decoration: none;
+}
+
+.terminal-cell a:hover {
+    text-decoration: underline;
+}
+
 /* Container Styles */
 .outer-container {
     display: flex;
