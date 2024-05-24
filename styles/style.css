@@ -27,6 +27,17 @@ a:hover {
 i{
     margin-left:0.5rem;
 }
+
+pre, code {
+    font-family: 'Inconsolata', 'Fira Mono', monospace;
+    background-color: #1E1E2F;
+    color: #C5C8C6;
+    padding: 10px;
+    border: 1px solid #F0C674;
+    border-radius: 5px;
+    overflow: auto;
+    white-space: pre;
+}
 /* Container Styles */
 .outer-container {
     display: flex;
