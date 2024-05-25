@@ -1,32 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(function() {
     console.log("DOMContentLoaded event listener called");
 
     function showSection(sectionId) {
         console.log(`showSection called with sectionId: ${sectionId}`);
-        const sections = document.querySelectorAll('.main-content section');
+        const sections = $('.main-content section');
         console.log(`Found ${sections.length} sections`);
-        sections.forEach(section => {
-            section.style.display = 'none';
-        });
+        sections.hide();
 
-        const selectedSection = document.getElementById(sectionId);
-        if (selectedSection) {
+        const selectedSection = $(`#${sectionId}`);
+        if (selectedSection.length) {
             console.log(`Displaying section: ${sectionId}`);
-            selectedSection.style.display = 'block';
+            selectedSection.show();
         } else {
             console.log(`Section with id ${sectionId} not found`);
         }
 
-        const buttons = document.querySelectorAll('.navbar nav button');
+        const buttons = $('.navbar nav button');
         console.log(`Found ${buttons.length} buttons`);
-        buttons.forEach(button => {
-            button.classList.remove('highlight-button');
-        });
+        buttons.removeClass('highlight-button');
 
-        const selectedButton = document.querySelector(`.navbar nav button[data-section="${sectionId}"]`);
-        if (selectedButton) {
+        const selectedButton = $(`.navbar nav button[data-section="${sectionId}"]`);
+        if (selectedButton.length) {
             console.log(`Highlighting button for section: ${sectionId}`);
-            selectedButton.classList.add('highlight-button');
+            selectedButton.addClass('highlight-button');
         } else {
             console.log(`Button for section ${sectionId} not found`);
         }
@@ -34,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkOrientation() {
         console.log("checkOrientation called");
-        const overlay = document.getElementById('rotate-overlay');
-        if (overlay) {
+        const overlay = $('#rotate-overlay');
+        if (overlay.length) {
             if (window.innerHeight > window.innerWidth) {
-                overlay.style.display = 'flex';
+                overlay.css('display', 'flex');
             } else {
-                overlay.style.display = 'none';
+                overlay.css('display', 'none');
             }
         }
     }
@@ -51,19 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showMainContent() {
         console.log("showMainContent called");
-        const loadingScreen = document.getElementById('loading-screen');
-        const mainContent = document.querySelector('.outer-container');
-        console.log(`loadingScreen found: ${loadingScreen !== null}`);
-        console.log(`mainContent found: ${mainContent !== null}`);
-        if (loadingScreen && mainContent) {
-            loadingScreen.style.display = 'none';
-            mainContent.style.display = 'flex';
+        const loadingScreen = $('#loading-screen');
+        const mainContent = $('.outer-container');
+        console.log(`loadingScreen found: ${loadingScreen.length !== 0}`);
+        console.log(`mainContent found: ${mainContent.length !== 0}`);
+        if (loadingScreen.length && mainContent.length) {
+            loadingScreen.hide();
+            mainContent.css('display', 'flex');
         } else {
             console.error('Error: loadingScreen or mainContent not found');
         }
     }
 
-    window.addEventListener('resize', () => {
+    $(window).on('resize', function() {
         console.log("resize event listener called");
         checkOrientation();
     });
@@ -71,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkOrientation();
     highlightAboutOnLoad();
 
-    setTimeout(() => {
+    setTimeout(function() {
         console.log("setTimeout callback called after 2 seconds");
         showMainContent();
     }, 2000);
